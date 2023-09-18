@@ -16,7 +16,7 @@ export const getAnimal = (req, res) => {
     const animal = animals.find(animal => animal.id === req.params.id);
 
     if (!animal) {
-        return res.status(404).send("No animal foud");
+        return res.status(404).send("No animal found");
     }
 
     res.send(animal);
@@ -42,7 +42,7 @@ export const updateAnimal = (req, res) => {
     const animal = animals.find(animal => animal.id === req.params.id);
 
     if (!animal) {
-        return res.status(404).send("No animal foud");
+        return res.status(404).send("No animal found");
     }
 
     const { species, name, age, habitat } = req.body;
@@ -64,7 +64,7 @@ export const deleteAnimal = (req, res) => {
     const animal = animals.find(animal => animal.id === req.params.id);
 
     if (!animal) {
-        return res.status(404).send("No animal foud");
+        return res.status(404).send("No animal found");
     }
 
     const index = animals.indexOf(animal);
